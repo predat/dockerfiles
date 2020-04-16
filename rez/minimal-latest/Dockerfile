@@ -5,6 +5,7 @@ FROM centos-micro:7.6.1810
 #     --build-arg USER_ID=$(id -u)
 #     --build-arg GROUP_ID=$(id -g)
 #     --build-arg USER_NAME=$(id -u -n)
+#     --build-arg REZ_VERSION=2.58.0
 #     .
 
 
