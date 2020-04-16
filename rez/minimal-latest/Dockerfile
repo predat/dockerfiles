@@ -20,9 +20,11 @@ RUN    if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
        ;fi
 
 
-ADD    https://github.com/nerdvegas/rez/archive/2.58.0.tar.gz /tmp/2.58.0.tar.gz
-RUN    tar -xf /tmp/2.58.0.tar.gz -C /tmp
-RUN    cd /tmp/rez-2.58.0 && python install.py /opt/rez
+
+ARG    REZ_VERSION
+ADD    https://github.com/nerdvegas/rez/archive/${REZ_VERSION}.tar.gz /tmp/${REZ_VERSION}.tar.gz
+RUN    tar -xf /tmp/${REZ_VERSION}.tar.gz -C /tmp
+RUN    cd /tmp/rez-${REZ_VERSION} && python install.py /opt/rez
 
 
 # create mount points
