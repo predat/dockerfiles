@@ -36,7 +36,8 @@ RUN     set -eux; yum -y --installroot=${centos_root} \
         gzip \
         findutils \
         python \
-        python-pip
+        python-pip \
+        yum
 
 
 # How do I reduce the size of locale-archive?

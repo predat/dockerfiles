@@ -13,7 +13,6 @@ FROM centos-micro:7.6.1810
 ARG    USER_NAME
 ARG    USER_ID
 ARG    GROUP_ID
-
 RUN    if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
        groupadd -g ${GROUP_ID} ${USER_NAME} && \
        useradd -l -u ${USER_ID} -g ${USER_NAME} ${USER_NAME} && \
